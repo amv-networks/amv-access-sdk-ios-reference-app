@@ -456,8 +456,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/amv-framework-ios/Frameworks",
-					"$(PROJECT_DIR)/amv-framework-ios",
+					"$(PROJECT_DIR)/amv-access-sdk-ios/Frameworks",
+					"$(PROJECT_DIR)/amv-access-sdk-ios",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AMV Reference App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -479,8 +479,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/amv-framework-ios/Frameworks",
-					"$(PROJECT_DIR)/amv-framework-ios",
+					"$(PROJECT_DIR)/amv-access-sdk-ios/Frameworks",
+					"$(PROJECT_DIR)/amv-access-sdk-ios",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AMV Reference App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

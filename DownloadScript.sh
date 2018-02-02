@@ -1,6 +1,6 @@
 #!/bin/sh
 
-AMVKIT_DIR="amv-framework-ios"
+AMVKIT_DIR="amv-access-sdk-ios"
 AMVKIT_FRAMEWORK="${AMVKIT_DIR}/AMVKit.framework"
 
 
