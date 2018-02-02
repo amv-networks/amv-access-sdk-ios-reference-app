@@ -1,0 +1,4 @@
+amv-access-sdk-ios-reference-app
+Copyright 2018 AMV Networks GmbH
+
+This product includes software developed at AMV Networks GmbH (https://www.amv-networks.com/).
