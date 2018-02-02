@@ -1,3 +1,4 @@
+[![License](https://img.shields.io/github/license/amv-networks/amv-access-sdk-ios-reference-app.svg?maxAge=2592000)](https://github.com/amv-networks/amv-access-sdk-ios-reference-app/blob/master/LICENSE)
 
 # AMVKit reference app #
 
