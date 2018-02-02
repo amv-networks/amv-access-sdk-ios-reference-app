@@ -1,14 +1,20 @@
+
 # AMVKit reference app #
 
 ## What is this repository for? ##
 
-This repository contains the *Xcode 9* project for *AMVKit sample app*.  
+This repository contains the *Xcode 9* project for *AMVKit reference app*.  
 Check out the [AMVKit](https://github.com/amv-networks/amv-access-sdk-ios.git) for more details.
 
-## How do I get set up? ##
-
+## getting started
+### download reference app and build AMVKit
+```bash
+git clone https://github.com/amv-networks/amv-access-sdk-ios-reference-app.git
+cd amv-access-sdk-ios/
+./UpdateScript.sh 
+```
+### setup
 * Open the *AMV Reference App.xcodeproj* with Xcode 9+
-* To run on a device, a valid *provisioning profile* is required: [guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html)
-    * Bluetooth does not work in the simulator
+* Add the the frameworks (*AMVKit*, *HMKit*, *HMCrypto* and *AutoApi*) from the folder *amv-access-sdk-ios* to the *Embedded Binaries* in the project settings.
 
-To update the *AMVKit*, execute `sh UpdateScript.sh`.
+
