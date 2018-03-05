@@ -16,7 +16,6 @@ cd amv-access-sdk-ios/
 ```
 ### setup
 * Open the *AMV Reference App.xcodeproj* with Xcode 9+
-* Add the the frameworks (*AMVKit*, *HMKit*, *HMCrypto* and *AutoApi*) from the folder *amv-access-sdk-ios* to the *Embedded Binaries* in the project settings.
 * Change the values of `application.plist` to your needs.
 
 # license
