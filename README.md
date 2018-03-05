@@ -11,8 +11,7 @@ Check out the [AMVKit](https://github.com/amv-networks/amv-access-sdk-ios.git) f
 ### download reference app and build AMVKit
 ```bash
 git clone https://github.com/amv-networks/amv-access-sdk-ios-reference-app.git
-cd amv-access-sdk-ios/
-./UpdateScript.sh 
+sh UpdateScript.sh 
 ```
 ### setup
 * Open the *AMV Reference App.xcodeproj* with Xcode 9+
