@@ -62,7 +62,12 @@ class TableViewController: UITableViewController {
 
         do {
             let accessApiContext: AccessApiContext = try ApplicationPropertiesReader.createProperties(fromPropertyList: "application")
-            initialisedAMVKit(accessApiContext)
+            
+            // Example to initialise AMVKit with an identity stored in a property file
+            //let identity: Identity = try ApplicationPropertiesReader.createProperties(fromPropertyList: "identity")
+            //initialisedAMVKit(AccessSdkOptions(accessApiContext, identity))
+            
+            initialisedAMVKit(AccessSdkOptions(accessApiContext))
         }
         catch {
             displayErrorText("Error while loading application properties", error: error)
@@ -108,9 +113,9 @@ private extension TableViewController {
         tableView.endUpdates()
     }
 
-    func initialisedAMVKit(_ accessApiContext: AccessApiContext) {
+    func initialisedAMVKit(_ accessSdkOptions: AccessSdkOptions) {
         do {
-            try AMVKit.shared.initialise(accessApiContext: accessApiContext, handler: { result in
+            try AMVKit.shared.initialise(accessSdkOptions: accessSdkOptions, handler: { result in
                 OperationQueue.main.addOperation {
                     switch result {
                     case .error(let error):

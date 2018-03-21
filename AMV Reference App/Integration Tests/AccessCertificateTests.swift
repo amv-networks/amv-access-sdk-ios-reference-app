@@ -6,7 +6,7 @@ import XCTest
 class AccessCertificateTests: XCTestCase {
 
     private var serial: Hex?
-    private var accessApiContext: AccessApiContext?
+    private var accessSdkOptions: AccessSdkOptions?
 
     // MARK: Management
 
@@ -16,11 +16,12 @@ class AccessCertificateTests: XCTestCase {
         AMVKit.shared.logRequestsResponse = true
 
         do {
-            self.accessApiContext = try ApplicationPropertiesReader.createProperties(fromPropertyList: "application")
-            
+            let accessApiContext: AccessApiContext = try ApplicationPropertiesReader.createProperties(fromPropertyList: "application")
+            self.accessSdkOptions = AccessSdkOptions(accessApiContext)
+
             let serialExpectation = expectation(description: "Downloaded device certificate's serial")
 
-            try DeviceCertificate.download(publicKey: KeysManager.shared.publicKey, accessApiContext: self.accessApiContext!) {
+            try DeviceCertificate.download(publicKey: KeysManager.shared.publicKey, accessSdkOptions: self.accessSdkOptions!) {
                 if case .success(let deviceCertificate) = $0 {
                     self.serial = deviceCertificate.serial
                 }
@@ -51,7 +52,7 @@ class AccessCertificateTests: XCTestCase {
         do {
             let downloadExpectation = expectation(description: "Downloaded valid Access Certificates")
 
-            try AccessCertificates.download(deviceSerial: serial, accessApiContext: self.accessApiContext!) {
+            try AccessCertificates.download(deviceSerial: serial, accessApiContext: self.accessSdkOptions!.accessApiContext) {
                 switch $0 {
                 case .error(let error):
                     XCTFail("Download failed, error: \(error)")

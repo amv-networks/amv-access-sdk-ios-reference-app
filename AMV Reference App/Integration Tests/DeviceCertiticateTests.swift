@@ -11,9 +11,10 @@ class DeviceCertiticateTests: XCTestCase {
         do {
             let downloadExpectation = expectation(description: "Downloaded valid Device Certificate")
             
-            let newAccessApiContext: AccessApiContext = try ApplicationPropertiesReader.createProperties(fromPropertyList: "application");
+            let accessApiContext: AccessApiContext = try ApplicationPropertiesReader.createProperties(fromPropertyList: "application")
+            let accessSdkOptions = AccessSdkOptions(accessApiContext)
 
-            try DeviceCertificate.download(publicKey: KeysManager.shared.publicKey, accessApiContext: newAccessApiContext) {
+            try DeviceCertificate.download(publicKey: KeysManager.shared.publicKey, accessSdkOptions: accessSdkOptions) {
                 switch $0 {
                 case .error(let error):
                     XCTFail("Download failed, error: \(error)")
