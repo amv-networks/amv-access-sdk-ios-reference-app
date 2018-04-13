@@ -60,6 +60,11 @@ class AccessCertificateTests: XCTestCase {
                     if let pair = accessCertificates.all.first {
                         // Check that the Access Certificate meant for the device has a correct serial number
                         XCTAssertEqual(pair.deviceCertificate.providingSerial.hex, serial, "Wrong serial number in device Access Certificate")
+                        
+                        // save the previous downloaded acccess certificate
+                        // findAcessCertificateById loads them from local storage
+                        accessCertificates.save()
+                        self.findAcessCertificateById(accessCertificateToTest: pair)
                     }
                     else {
                         XCTFail("Access Certificates response does not contain any.")
@@ -74,5 +79,15 @@ class AccessCertificateTests: XCTestCase {
         catch {
             XCTFail("Failed to start downloading Access Certificates, error: \(error)")
         }
+    }
+    
+    func findAcessCertificateById(accessCertificateToTest accessCertificate: AccessCertificate) {
+        let identifier = accessCertificate.identifier
+
+        // previous stored certificate
+        XCTAssertTrue(AMVKit.shared.getAccessCertificateById(identifier) == accessCertificate)
+        
+        // random identifier
+        XCTAssertNil(AMVKit.shared.getAccessCertificateById(UUID().uuidString))
     }
 }
