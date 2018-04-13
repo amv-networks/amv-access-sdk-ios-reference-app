@@ -18,30 +18,17 @@ class ControlViewController: UIViewController {
     // MARK: Vars
 
     var accessCertificate: AccessCertificate!
+    var firstCall = true
 
 
     // MARK: IBActions
 
     @IBAction func lockButtonTapped(_ sender: UIButton) {
-        enableButtons(false)
-
-        do {
-            try AMVKit.shared.sendCommand(.lockDoors)
-        }
-        catch {
-            displayErrorText("Lock Doors failure", error: error)
-        }
+        lockDoors()
     }
 
     @IBAction func unlockButtonTapped(_ sender: UIButton) {
-        enableButtons(false)
-
-        do {
-            try AMVKit.shared.sendCommand(.unlockDoors)
-        }
-        catch {
-            displayErrorText("Unlock Doors failure", error: error)
-        }
+        unlockDoors()
     }
 
 
@@ -58,6 +45,8 @@ class ControlViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    
+        self.firstCall = true
 
         // Connect automatically
         do {
@@ -105,6 +94,15 @@ private extension ControlViewController {
         switch status {
         case .authenticated:
             navigationItem.title = "Authenticated - " + accessCertificate.name
+            
+            DispatchQueue.main.async {
+                do {
+                    try AMVKit.shared.sendCommand(.requestVehicleState)
+                }
+                catch {
+                    self.displayErrorText("Request Vehicle State failure", error: error)
+                }
+            }
 
         case .connected:
             navigationItem.title = "Connected - " + accessCertificate.name
@@ -150,6 +148,14 @@ private extension ControlViewController {
 
             case let doors as Doors:
                 self.doorsReceived(doors)
+                
+                if self.firstCall {
+                    self.firstCall = false
+                    
+                    DispatchQueue.main.async {
+                        self.lockUnlockDoors(doorsState: doors)
+                    }
+                }
 
             case let keys as Keys:
                 self.keysReceived(keys)
@@ -158,6 +164,36 @@ private extension ControlViewController {
                 print("Unknown vehicle state received")
                 break;
             }
+        }
+    }
+    
+    func lockUnlockDoors(doorsState: Doors) {
+        if doorsState.isLocked {
+            unlockDoors()
+        } else {
+            lockDoors()
+        }
+    }
+    
+    func lockDoors() {
+        enableButtons(false)
+        
+        do {
+            try AMVKit.shared.sendCommand(.lockDoors)
+        }
+        catch {
+            displayErrorText("Lock Doors failure", error: error)
+        }
+    }
+    
+    func unlockDoors() {
+        enableButtons(false)
+        
+        do {
+            try AMVKit.shared.sendCommand(.unlockDoors)
+        }
+        catch {
+            displayErrorText("Unlock Doors failure", error: error)
         }
     }
 }
