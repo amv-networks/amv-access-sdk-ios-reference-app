@@ -1,36 +1,38 @@
-//
-//  IndentityTests.swift
-//  Integration Tests
-//
-//  Created by Thomas Jetzinger on 19.03.18.
-//  Copyright © 2018 High-Mobility GmbH. All rights reserved.
-//
+@testable import AMVKit
 
 import XCTest
 
 class IndentityTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_findIdentityShouldReturnPreviousStoredIdentity() {
+        
+        do {
+            let initialiseExpectation = expectation(description: "Initialise expectation")
+            
+            let accessApiContext: AccessApiContext = try ApplicationPropertiesReader.createProperties(fromPropertyList: "application")
+            let initialisedIdentity: Identity = try ApplicationPropertiesReader.createProperties(fromPropertyList: "identity")
+            
+            try AMVKit.shared.initialise(accessSdkOptions: AccessSdkOptions(accessApiContext, initialisedIdentity), handler: { result in
+                    switch result {
+                        case .error(let error):
+                            XCTFail("Failed to initialise AMVKit, error: \(error)")
+                        case .success(let deviceCertificate):
+                            if let serial = deviceCertificate.serial?.lowercased() {
+                                XCTAssertEqual(serial, initialisedIdentity.deviceSerialNumber)
+                                
+                                let identity = IdentityManager.findIdentity()
+                                
+                                XCTAssertNotNil(identity)
+                                XCTAssertEqual(initialisedIdentity, identity!)
+                            }
+                    }
+                
+                    initialiseExpectation.fulfill()
+                }
+            )
+            
+            waitForExpectations(timeout: 30.0)
+        } catch {
+            XCTFail("Failed to start downloading Device Certificate, error: \(error)")
         }
     }
     
