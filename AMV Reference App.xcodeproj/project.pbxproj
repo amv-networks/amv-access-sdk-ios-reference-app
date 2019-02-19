@@ -17,17 +17,8 @@
 		20A6D64E1FC2D43D00438F4F /* UpdateScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = 20A6D64C1FC2D43D00438F4F /* UpdateScript.sh */; };
 		20DA5D791F8D03330065204E /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA5D781F8D03330065204E /* ControlViewController.swift */; };
 		310C5559202322A300FAFC46 /* DeviceCertiticateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C5557202322A300FAFC46 /* DeviceCertiticateTests.swift */; };
-		313C93B120235232001848D4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 313C93B020235232001848D4 /* Info.plist */; };
 		318B2F8C205FE79B00C94379 /* IndentityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B2F8B205FE79B00C94379 /* IndentityTests.swift */; };
 		318B2F982061181700C94379 /* identity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 318B2F972061181700C94379 /* identity.plist */; };
-		318B2FA02063F71900C94379 /* AMVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318B2F9F2063F71900C94379 /* AMVKit.framework */; };
-		318B2FA12063F71900C94379 /* AMVKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 318B2F9F2063F71900C94379 /* AMVKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		31CEB387204D346200A5B0A4 /* HMCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CEB383204D346100A5B0A4 /* HMCrypto.framework */; };
-		31CEB388204D346200A5B0A4 /* HMCrypto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31CEB383204D346100A5B0A4 /* HMCrypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		31CEB389204D346200A5B0A4 /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CEB384204D346100A5B0A4 /* HMKit.framework */; };
-		31CEB38A204D346200A5B0A4 /* HMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31CEB384204D346100A5B0A4 /* HMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		31CEB38D204D346200A5B0A4 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CEB386204D346100A5B0A4 /* AutoAPI.framework */; };
-		31CEB38E204D346200A5B0A4 /* AutoAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31CEB386204D346100A5B0A4 /* AutoAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		31E6A925201B18C500B2417C /* application.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31E6A924201B18C500B2417C /* application.plist */; };
 		31E6A9272021D26C00B2417C /* ApplicationPropertiesReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E6A9262021D26B00B2417C /* ApplicationPropertiesReader.swift */; };
 		31E6A92A2021D36800B2417C /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E6A9292021D36800B2417C /* Failure.swift */; };
@@ -35,6 +26,17 @@
 		31E6A99D2022FE3700B2417C /* AccessCertificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E6A99C2022FE3700B2417C /* AccessCertificateTests.swift */; };
 		31E6A99E2022FE6000B2417C /* ApplicationPropertiesReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E6A9262021D26B00B2417C /* ApplicationPropertiesReader.swift */; };
 		31E6A99F2022FE7C00B2417C /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E6A9292021D36800B2417C /* Failure.swift */; };
+		D8028908221C7183000B1679 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 313C93B020235232001848D4 /* Info.plist */; };
+		D802890B221C7317000B1679 /* HMUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8028909221C7317000B1679 /* HMUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D802890C221C7317000B1679 /* HMCryptoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D802890A221C7317000B1679 /* HMCryptoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D802890E221C732D000B1679 /* HMUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8028909221C7317000B1679 /* HMUtilities.framework */; };
+		D802890F221C732D000B1679 /* HMCryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D802890A221C7317000B1679 /* HMCryptoKit.framework */; };
+		D8028914221C7350000B1679 /* AutoAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8028911221C7350000B1679 /* AutoAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8028915221C7350000B1679 /* HMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8028913221C7350000B1679 /* HMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8028917221C7360000B1679 /* AMVKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8028916221C7360000B1679 /* AMVKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8028918221C7370000B1679 /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8028913221C7350000B1679 /* HMKit.framework */; };
+		D8028919221C7370000B1679 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8028911221C7350000B1679 /* AutoAPI.framework */; };
+		D802891A221C7393000B1679 /* AMVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8028916221C7360000B1679 /* AMVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +56,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				318B2FA12063F71900C94379 /* AMVKit.framework in Embed Frameworks */,
-				31CEB38E204D346200A5B0A4 /* AutoAPI.framework in Embed Frameworks */,
-				31CEB38A204D346200A5B0A4 /* HMKit.framework in Embed Frameworks */,
-				31CEB388204D346200A5B0A4 /* HMCrypto.framework in Embed Frameworks */,
+				D8028917221C7360000B1679 /* AMVKit.framework in Embed Frameworks */,
+				D802890B221C7317000B1679 /* HMUtilities.framework in Embed Frameworks */,
+				D8028914221C7350000B1679 /* AutoAPI.framework in Embed Frameworks */,
+				D802890C221C7317000B1679 /* HMCryptoKit.framework in Embed Frameworks */,
+				D8028915221C7350000B1679 /* HMKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,16 +83,17 @@
 		313C93B020235232001848D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "AMV Reference App/Integration Tests/Info.plist"; sourceTree = SOURCE_ROOT; };
 		318B2F8B205FE79B00C94379 /* IndentityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IndentityTests.swift; path = "AMV Reference App/Integration Tests/IndentityTests.swift"; sourceTree = SOURCE_ROOT; };
 		318B2F972061181700C94379 /* identity.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = identity.plist; sourceTree = "<group>"; };
-		318B2F9F2063F71900C94379 /* AMVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMVKit.framework; path = "amv-access-sdk-ios/AMVKit.framework"; sourceTree = "<group>"; };
-		31CEB383204D346100A5B0A4 /* HMCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMCrypto.framework; path = "amv-access-sdk-ios/Frameworks/HMCrypto.framework"; sourceTree = "<group>"; };
-		31CEB384204D346100A5B0A4 /* HMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMKit.framework; path = "amv-access-sdk-ios/Frameworks/HMKit.framework"; sourceTree = "<group>"; };
-		31CEB386204D346100A5B0A4 /* AutoAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoAPI.framework; path = "amv-access-sdk-ios/Frameworks/AutoAPI.framework"; sourceTree = "<group>"; };
 		31E6A924201B18C500B2417C /* application.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = application.plist; sourceTree = "<group>"; };
 		31E6A9262021D26B00B2417C /* ApplicationPropertiesReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationPropertiesReader.swift; sourceTree = "<group>"; };
 		31E6A9292021D36800B2417C /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		31E6A9902022119800B2417C /* Integration Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Integration Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E6A99A2022122C00B2417C /* KeyPairTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPairTests.swift; path = "AMV Reference App/Integration Tests/KeyPairTests.swift"; sourceTree = SOURCE_ROOT; };
 		31E6A99C2022FE3700B2417C /* AccessCertificateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessCertificateTests.swift; path = "AMV Reference App/Integration Tests/AccessCertificateTests.swift"; sourceTree = SOURCE_ROOT; };
+		D8028909221C7317000B1679 /* HMUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMUtilities.framework; path = "amv-access-sdk-ios/Frameworks/HMUtilities.framework"; sourceTree = "<group>"; };
+		D802890A221C7317000B1679 /* HMCryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMCryptoKit.framework; path = "amv-access-sdk-ios/Frameworks/HMCryptoKit.framework"; sourceTree = "<group>"; };
+		D8028911221C7350000B1679 /* AutoAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoAPI.framework; path = "amv-access-sdk-ios/Frameworks/AutoAPI.framework"; sourceTree = "<group>"; };
+		D8028913221C7350000B1679 /* HMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMKit.framework; path = "amv-access-sdk-ios/Frameworks/HMKit.framework"; sourceTree = "<group>"; };
+		D8028916221C7360000B1679 /* AMVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMVKit.framework; path = "amv-access-sdk-ios/AMVKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +101,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				318B2FA02063F71900C94379 /* AMVKit.framework in Frameworks */,
-				31CEB38D204D346200A5B0A4 /* AutoAPI.framework in Frameworks */,
-				31CEB389204D346200A5B0A4 /* HMKit.framework in Frameworks */,
-				31CEB387204D346200A5B0A4 /* HMCrypto.framework in Frameworks */,
+				D802891A221C7393000B1679 /* AMVKit.framework in Frameworks */,
+				D802890E221C732D000B1679 /* HMUtilities.framework in Frameworks */,
+				D8028918221C7370000B1679 /* HMKit.framework in Frameworks */,
+				D802890F221C732D000B1679 /* HMCryptoKit.framework in Frameworks */,
+				D8028919221C7370000B1679 /* AutoAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,12 +122,14 @@
 		201841D41F7546B800A8C8CE = {
 			isa = PBXGroup;
 			children = (
-				318B2F9F2063F71900C94379 /* AMVKit.framework */,
-				31CEB386204D346100A5B0A4 /* AutoAPI.framework */,
-				31CEB383204D346100A5B0A4 /* HMCrypto.framework */,
-				31CEB384204D346100A5B0A4 /* HMKit.framework */,
+				D8028916221C7360000B1679 /* AMVKit.framework */,
+				D802890A221C7317000B1679 /* HMCryptoKit.framework */,
+				D8028911221C7350000B1679 /* AutoAPI.framework */,
+				D8028913221C7350000B1679 /* HMKit.framework */,
+				D8028909221C7317000B1679 /* HMUtilities.framework */,
 				201841DF1F7546B800A8C8CE /* AMV Reference App */,
 				201841DE1F7546B800A8C8CE /* Products */,
+				D802890D221C732D000B1679 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +215,13 @@
 			);
 			name = "Integration Tests";
 			path = "../Integration Tests";
+			sourceTree = "<group>";
+		};
+		D802890D221C732D000B1679 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +315,6 @@
 				31E6A925201B18C500B2417C /* application.plist in Resources */,
 				20A6D64D1FC2D43D00438F4F /* DownloadScript.sh in Resources */,
 				20A6D64E1FC2D43D00438F4F /* UpdateScript.sh in Resources */,
-				313C93B120235232001848D4 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8028908221C7183000B1679 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +498,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F42CFRE556;
+				DEVELOPMENT_TEAM = DH27FYA7JG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -508,7 +522,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F42CFRE556;
+				DEVELOPMENT_TEAM = DH27FYA7JG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -531,7 +545,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F42CFRE556;
+				DEVELOPMENT_TEAM = DH27FYA7JG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -554,7 +568,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F42CFRE556;
+				DEVELOPMENT_TEAM = DH27FYA7JG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

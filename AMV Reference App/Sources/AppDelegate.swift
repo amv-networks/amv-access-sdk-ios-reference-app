@@ -8,7 +8,7 @@ import UIKit
 
     // MARK: UIApplicationDelegate
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if #available(iOS 11.0, *) {
             UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).textColor = UIColor(named: "Hellgrau")   // This handles an iOS 11 bug, radar #34758558
         }

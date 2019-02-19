@@ -7,7 +7,7 @@ class TableViewController: UITableViewController {
     @IBOutlet var refreshButton: UIBarButtonItem!
 
 
-    private var accessCertificates: [AccessCertificate] = []
+    private var accessCertificates: [AmvAccessCertificate] = []
 
     // MARK: IBActions
 
@@ -93,7 +93,7 @@ class TableViewController: UITableViewController {
 
 private extension TableViewController {
 
-    func addAccessCertificates(_ accessCertificates: [AccessCertificate]) {
+    func addAccessCertificates(_ accessCertificates: [AmvAccessCertificate]) {
         let indexPaths = (0..<accessCertificates.count).map { IndexPath(row: $0, section: 0) }
 
         self.accessCertificates = accessCertificates

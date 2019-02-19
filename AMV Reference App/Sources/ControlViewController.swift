@@ -17,7 +17,7 @@ class ControlViewController: UIViewController {
 
     // MARK: Vars
 
-    var accessCertificate: AccessCertificate!
+    var accessCertificate: AmvAccessCertificate!
     var firstCall = true
 
 
@@ -86,11 +86,11 @@ private extension ControlViewController {
 
     // MARK: Update
 
-    func chargingReceived(_ update: Charging) {
+    func chargingReceived(_ update: AMVCharging) {
         chargingPlugSwitch.isOn = update.isPlugConnected
     }
 
-    func connectionStatusReceived(_ status: ConnectionStatus) {
+    func connectionStatusReceived(_ status: AMVConnectionStatus) {
         switch status {
         case .authenticated:
             navigationItem.title = "Authenticated - " + accessCertificate.name
@@ -112,11 +112,11 @@ private extension ControlViewController {
         }
     }
 
-    func diagnosticsReceived(_ update: Diagnostics) {
+    func diagnosticsReceived(_ update: AMVDiagnostics) {
         mileageLabel.text = "\(update.mileage) km"
     }
 
-    func doorsReceived(_ update: Doors) {
+    func doorsReceived(_ update: AMVDoors) {
         lockButton.isHidden = update.isLocked
         unlockButton.isHidden = !update.isLocked
 
@@ -125,28 +125,28 @@ private extension ControlViewController {
         enableButtons(true)
     }
 
-    func keysReceived(_ update: Keys) {
+    func keysReceived(_ update: AMVKeys) {
         keySwitch.isOn = update.isInside
     }
 
     func updateReceived(_ update: VehicleUpdate) {
         OperationQueue.main.addOperation {
-            if !(update is ConnectionStatus) {
+            if !(update is AMVConnectionStatus) {
                 self.infoContainer.alpha = 1.0
             }
 
             // Forward the updates
             switch update {
-            case let charging as Charging:
+            case let charging as AMVCharging:
                 self.chargingReceived(charging)
 
-            case let connectionStatus as ConnectionStatus:
+            case let connectionStatus as AMVConnectionStatus:
                 self.connectionStatusReceived(connectionStatus)
 
-            case let diagnostics as Diagnostics:
+            case let diagnostics as AMVDiagnostics:
                 self.diagnosticsReceived(diagnostics)
 
-            case let doors as Doors:
+            case let doors as AMVDoors:
                 self.doorsReceived(doors)
                 
                 if self.firstCall {
@@ -157,7 +157,7 @@ private extension ControlViewController {
                     }
                 }
 
-            case let keys as Keys:
+            case let keys as AMVKeys:
                 self.keysReceived(keys)
 
             default:
@@ -167,7 +167,7 @@ private extension ControlViewController {
         }
     }
     
-    func lockUnlockDoors(doorsState: Doors) {
+    func lockUnlockDoors(doorsState: AMVDoors) {
         if doorsState.isLocked {
             unlockDoors()
         } else {
